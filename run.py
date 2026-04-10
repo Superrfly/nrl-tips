@@ -54,7 +54,7 @@ def parse_args():
 def load_env():
     load_dotenv(ROOT / ".env")
     api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
+    if not api_key and False:
         print("ERROR: ANTHROPIC_API_KEY not set in .env file")
         print("  Add it to your .env file: ANTHROPIC_API_KEY=sk-ant-...")
         sys.exit(1)
