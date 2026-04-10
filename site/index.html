@@ -3,261 +3,57 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NRL Tips — Round 6, 2026</title>
+  <title>NRL Tips &mdash; Round 6, 2026</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --surface2: #222;
-      --border: rgba(255,255,255,0.08);
-      --text: #f0f0f0;
-      --muted: #888;
-      --green: #639922;
-      --amber: #BA7517;
-      --red: #E24B4A;
+      --bg: #0f0f0f; --surface: #1a1a1a; --surface2: #222;
+      --border: rgba(255,255,255,0.08); --text: #f0f0f0; --muted: #888;
       --radius: 12px;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      padding: 0 0 4rem;
-    }
-
-    .site-header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .site-header h1 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .site-header .sub {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .nav {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 0.75rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-      position: sticky;
-      top: 60px;
-      z-index: 9;
-    }
-
-    .nav a {
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 3px 10px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      transition: all 0.15s;
-    }
-
-    .nav a:hover {
-      color: var(--text);
-      border-color: rgba(255,255,255,0.2);
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.25rem;
-      max-width: 1200px;
-      margin: 1.5rem auto;
-      padding: 0 1.25rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-header {
-      padding: 1rem 1.1rem 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .game-label {
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .matchup {
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .vs {
-      color: var(--muted);
-      font-weight: 400;
-      font-size: 14px;
-      margin: 0 4px;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    .tip-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0.6rem 1.1rem;
-      border-left: 4px solid transparent;
-    }
-
-    .tip-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-    }
-
-    .tip-team {
-      font-size: 14px;
-      font-weight: 600;
-      flex: 1;
-    }
-
-    .section-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-transform: uppercase;
-      padding: 0.75rem 1.1rem 0.25rem;
-    }
-
-    .quick-hits {
-      padding: 0 1.1rem 0.5rem;
-    }
-
-    .qh-row {
-      display: flex;
-      gap: 9px;
-      align-items: flex-start;
-      margin-bottom: 8px;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 5px;
-    }
-
-    .qh-text {
-      font-size: 13px;
-      line-height: 1.55;
-      color: #ccc;
-    }
-
-    .ats-section {
-      padding: 0 1.1rem 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .ats-block {
-      background: var(--surface2);
-      border-radius: 8px;
-      padding: 0.65rem 0.85rem;
-      border: 1px solid var(--border);
-    }
-
-    .ats-header {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      flex-wrap: wrap;
-      margin-bottom: 5px;
-    }
-
-    .ats-name {
-      font-size: 13px;
-      font-weight: 600;
-      flex: 1;
-    }
-
-    .ats-odds {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .ats-body {
-      font-size: 12px;
-      line-height: 1.6;
-      color: #aaa;
-    }
-
-    .badge {
-      font-size: 10px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 0 0 4rem; }
+    .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem; position: sticky; top: 0; z-index: 10; }
+    .site-header h1 { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
+    .site-header .sub { font-size: 12px; color: var(--muted); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 60px; z-index: 9; }
+    .nav a { font-size: 12px; color: var(--muted); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 20px; transition: all 0.15s; }
+    .nav a:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; max-width: 1200px; margin: 1.5rem auto; padding: 0 1.25rem; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+    .card-header { padding: 1rem 1.1rem 0.75rem; border-bottom: 1px solid var(--border); }
+    .game-label { font-size: 10px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+    .matchup { font-size: 17px; font-weight: 600; line-height: 1.3; }
+    .vs { color: var(--muted); font-weight: 400; font-size: 14px; margin: 0 4px; }
+    .meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .tip-bar { display: flex; align-items: center; gap: 10px; padding: 0.6rem 1.1rem; border-left: 4px solid transparent; }
+    .tip-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; }
+    .tip-team { font-size: 14px; font-weight: 600; flex: 1; }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; padding: 0.75rem 1.1rem 0.25rem; }
+    .quick-hits { padding: 0 1.1rem 0.5rem; }
+    .qh-row { display: flex; gap: 9px; align-items: flex-start; margin-bottom: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .qh-text { font-size: 13px; line-height: 1.55; color: #ccc; }
+    .positions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 1.1rem 0.75rem; }
+    .pos-block { background: var(--surface2); border-radius: 8px; padding: 0.65rem 0.75rem; border: 1px solid var(--border); }
+    .pos-team-name { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .pos-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; font-size: 12px; }
+    .pos-code { font-weight: 700; color: #eee; min-width: 30px; }
+    .pos-label { color: var(--muted); font-size: 11px; flex: 1; }
+    .pos-scored { color: #639922; font-weight: 600; min-width: 24px; }
+    .pos-conceded { color: #E24B4A; font-weight: 600; min-width: 24px; }
+    .ats-section { padding: 0 1.1rem 0.5rem; display: flex; flex-direction: column; gap: 10px; }
+    .ats-block { background: var(--surface2); border-radius: 8px; padding: 0.65rem 0.85rem; border: 1px solid var(--border); }
+    .ats-header { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 5px; }
+    .ats-name { font-size: 13px; font-weight: 600; flex: 1; }
+    .ats-odds { font-size: 12px; color: var(--muted); }
+    .ats-body { font-size: 12px; line-height: 1.6; color: #aaa; }
+    .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
     .badge-green { background: #EAF3DE; color: #3B6D11; }
     .badge-amber { background: #FAEEDA; color: #633806; }
-
-    .summary {
-      font-size: 13px;
-      font-weight: 500;
-      color: #ddd;
-      padding: 0.75rem 1.1rem;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-      line-height: 1.5;
-    }
-
-    .tryline-link {
-      display: block;
-      font-size: 11px;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 0.5rem 1.1rem;
-      border-top: 1px solid var(--border);
-      transition: color 0.15s;
-    }
-
+    .summary { font-size: 13px; font-weight: 500; color: #ddd; padding: 0.75rem 1.1rem; border-top: 1px solid var(--border); margin-top: auto; line-height: 1.5; }
+    .tryline-link { display: block; font-size: 11px; color: var(--muted); text-decoration: none; padding: 0.5rem 1.1rem; border-top: 1px solid var(--border); transition: color 0.15s; }
     .tryline-link:hover { color: var(--text); }
-
-    .footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2rem;
-    }
-
+    .footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 2rem; }
     @media (max-width: 600px) {
       .cards-grid { grid-template-columns: 1fr; padding: 0 0.75rem; }
       .nav { top: 56px; }
@@ -265,246 +61,125 @@
   </style>
 </head>
 <body>
-
 <header class="site-header">
-  <h1>NRL Tips — Round 6, 2026</h1>
-  <div class="sub">Generated 11 april 2026, 7:08am · Data via Tryline</div>
+  <h1>NRL Tips &mdash; Round 6, 2026</h1>
+  <div class="sub">Generated 11 april 2026, 8:08am &middot; Data via Tryline &middot; gemma3:12b</div>
 </header>
-
-<nav class="nav">
-  <a href="#game-1">Rabbitohs v Raiders</a><a href="#game-2">Sharks v Roosters</a><a href="#game-3">Storm v Warriors</a>
-</nav>
-
+<nav class="nav"><a href="#game-1">Rabbitohs v Raiders</a></nav>
 <div class="cards-grid">
-  
     <div class="card" id="game-1">
       <div class="card-header">
         <div class="game-label">GAME 1</div>
         <div class="matchup">South Sydney Rabbitohs <span class="vs">v</span> Canberra Raiders</div>
-        <div class="meta">Round 6 · 2026 · Optus Stadium, Perth</div>
+        <div class="meta">Round 6 &middot; 2026 &middot; Optus Stadium, Perth</div>
       </div>
-
       <div class="tip-bar" style="background:#EAF3DE; border-color:#639922;">
         <div class="tip-label" style="color:#3B6D11;">TIP</div>
         <div class="tip-team" style="color:#3B6D11;">South Sydney Rabbitohs</div>
         <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
       </div>
-
       <div class="section-label">QUICK HITS</div>
       <div class="quick-hits">
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Souths sit 4th on the ladder with a strong points difference of +14.</div>
+          <div class="qh-text">South Sydney currently sits 4th on the ladder with a +14 point differential, showcasing their strong form.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Raiders are languishing in 16th with a massive points difference of -69.</div>
+          <div class="qh-text">The Raiders are languishing in 16th position with a significant -69 point differential.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Souths have demonstrated resilience, overcoming halftime deficits in recent games.</div>
+          <div class="qh-text">South Sydney have shown resilience, overcoming halftime deficits in recent games.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Alex Johnston has been a consistent threat, bagging 4 tries in his last 4 games against Canberra.</div>
+          <div class="qh-text">Alex Johnston has a dominant record against the Raiders, scoring 4 tries in his last 4 encounters.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Canberra's right-side defence is the worst in the competition, leaking the most tries.</div>
+          <div class="qh-text">Canberra’s right-side defence is the worst in the competition, conceding the most tries.</div>
         </div>
         <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Raiders have lacked the aggressive edge that defined their performance last season.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Canberra pack are visibly frustrated by their team's inability to close out games.</div>
+          <div class="dot" style="background:#639922"></div>
+          <div class="qh-text">South Sydney's left wing has been a consistent scoring threat, registering 5 tries while conceding only 3.</div>
         </div></div>
-
+      
+      <div class="section-label">TOP SCORING POSITIONS</div>
+      <div class="positions-grid">
+        <div class="pos-block">
+          <div class="pos-team-name">Rabbitohs</div>
+          
+          <div class="pos-row">
+            <span class="pos-code">LW</span>
+            <span class="pos-label">Left Wing</span>
+            <span class="pos-scored">&#9650;5</span>
+            <span class="pos-conceded">&#9660;3</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">LC</span>
+            <span class="pos-label">Left Centre</span>
+            <span class="pos-scored">&#9650;5</span>
+            <span class="pos-conceded">&#9660;2</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">RW</span>
+            <span class="pos-label">Right Wing</span>
+            <span class="pos-scored">&#9650;3</span>
+            <span class="pos-conceded">&#9660;4</span>
+          </div>
+        </div>
+        <div class="pos-block">
+          <div class="pos-team-name">Raiders</div>
+          
+          <div class="pos-row">
+            <span class="pos-code">RW</span>
+            <span class="pos-label">Right Wing</span>
+            <span class="pos-scored">&#9650;4</span>
+            <span class="pos-conceded">&#9660;3</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">LW</span>
+            <span class="pos-label">Left Wing</span>
+            <span class="pos-scored">&#9650;3</span>
+            <span class="pos-conceded">&#9660;5</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">L2R</span>
+            <span class="pos-label">Left 2nd Row</span>
+            <span class="pos-scored">&#9650;3</span>
+            <span class="pos-conceded">&#9660;0</span>
+          </div>
+        </div></div>
       <div class="section-label">ATS / VALUE</div>
       <div class="ats-section">
         <div class="ats-block" style="border-left: 3px solid #639922;">
           <div class="ats-header">
             <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Alex Johnston — Anytime Tryscorer</span>
+            <span class="ats-name">Alex Johnston &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Johnston's history against the Raiders speaks for itself, and Souths' attack should exploit Canberra’s weak right-side defence. He's primed for another strong performance. Expect him to find space and finish strongly.</div>
+          <div class="ats-body">Johnston’s history against the Raiders is undeniable, and Souths' attack will exploit Canberra’s weak right-side defence.  He’s a must-have for any ATS portfolio.</div>
         </div>
         <div class="ats-block" style="">
           <div class="ats-header">
             
-            <span class="ats-name">Jordan Rapana — Anytime Tryscorer</span>
+            <span class="ats-name">Campbell Graham &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Rapana is Canberra's most consistent attacking threat, and might be their best chance of scoring. However, the Rabbitohs defence will be targeting him. He's a value play given the circumstances.</div>
+          <div class="ats-body">Positioned on the right wing, Graham is primed to capitalise on Canberra's defensive vulnerabilities, offering good value.</div>
         </div>
         <div class="ats-block" style="border-left: 3px solid #BA7517;">
           <div class="ats-header">
             <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Cody Walker — First Tryscorer</span>
+            <span class="ats-name">Liam Mitchell &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Walker's playmaking ability can create opportunities for the Rabbitohs, and he’s capable of finding the tryline himself. A value punt on his ability to spark Souths' attack.</div>
+          <div class="ats-body">While the Raiders' attack has struggled, Mitchell's speed and positioning could create an opportunity; a sneaky value play.</div>
         </div></div>
-
-      <div class="summary">South Sydney's superior form and attacking prowess will be too much for the struggling Raiders to handle in Perth.</div>
-
-      <a class="tryline-link" href="https://tryline.com.au/match/2661/2026-round-6-south-sydney-rabbitohs-vs-canberra-raiders" target="_blank" rel="noopener">View full stats on Tryline →</a>
-    </div>
-    <div class="card" id="game-2">
-      <div class="card-header">
-        <div class="game-label">GAME 2</div>
-        <div class="matchup">Cronulla-Sutherland Sharks <span class="vs">v</span> Sydney Roosters</div>
-        <div class="meta">Round 6 · 2026 · Optus Stadium, Perth</div>
-      </div>
-
-      <div class="tip-bar" style="background:#EAF3DE; border-color:#639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Cronulla-Sutherland Sharks</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Sharks secured a dominant win last round, showcasing their attacking potency.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Roosters are languishing in 11th position with a negative points differential.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Sharks’ attack is firing, evident in their 4 tries scored on the left side last game.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Will Kennedy is in form and proving a constant threat for the Sharks.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Roosters’ right-side defence is a clear weakness, ranking 16th in the competition.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Sharks knocked the Roosters out of the finals last year, adding extra motivation.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Radley and Leniu provide a much-needed boost to the Roosters’ forward pack.</div>
-        </div></div>
-
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Will Kennedy — Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Kennedy is in blistering form and consistently finds space. The Roosters' right-side defence is vulnerable, making him a prime try-scoring opportunity. He's a must-have for any serious punter.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Joseph Suaalii — Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Suaalii has the size and speed to exploit the Roosters' defensive frailties. While the Sharks' defence is solid, Suaalii's power makes him a threat.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Victor Radley — Metres Made</span>
-            
-          </div>
-          <div class="ats-body">Radley's return is a huge boost to the Roosters' attack and his metreage will be a key indicator of their forward momentum. Expect a strong performance from him.</div>
-        </div></div>
-
-      <div class="summary">The Sharks' attack and home advantage will be too much for a struggling Roosters side.</div>
-
-      <a class="tryline-link" href="https://tryline.com.au/match/2662/2026-round-6-cronulla-sutherland-sharks-vs-sydney-roosters" target="_blank" rel="noopener">View full stats on Tryline →</a>
-    </div>
-    <div class="card" id="game-3">
-      <div class="card-header">
-        <div class="game-label">GAME 3</div>
-        <div class="matchup">Melbourne Storm <span class="vs">v</span> New Zealand Warriors</div>
-        <div class="meta">Round 6 · 2026 · AAMI Park, Melbourne</div>
-      </div>
-
-      <div class="tip-bar" style="background:#EAF3DE; border-color:#639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Melbourne Storm</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Melbourne Storm have won a staggering 17 consecutive games against the Warriors.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Storm are currently on a four-game losing streak, a rare occurrence for this team.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Warriors have conceded in their last two games, indicating a defensive vulnerability.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Nick Meaney has been a constant threat, scoring 7 tries in his last 5 games against the Warriors.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Sua Faalogo is a proven performer against the Warriors, bagging a double in their previous encounter.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Warriors' right edge defence was exposed in their recent loss to the Sharks.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Warriors sit 6th on the ladder with a points difference of 52, while the Storm are 12th with 26.</div>
-        </div></div>
-
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Nick Meaney — Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Meaney's record against the Warriors is exceptional, consistently finding the try line. AAMI Park is a favourable environment for his attacking game, and the Warriors' right edge defence is a concern. He’s a must-have for your ATS selections.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">DWZ — Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">DWZ has shown he can score against the Storm, with two doubles in recent encounters. While the Storm defence is generally strong, DWZ’s explosive speed could exploit any lapses. Worth a punt.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Sua Faalogo — Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Faalogo’s previous double against the Warriors suggests he knows how to exploit their defensive weaknesses. At a potentially good price, he represents a solid value play for those looking for a bit of a risk.</div>
-        </div></div>
-
-      <div class="summary">History and form strongly favour the Storm, making them the clear favourites at home.</div>
-
-      <a class="tryline-link" href="https://tryline.com.au/match/2663/2026-round-6-melbourne-storm-vs-new-zealand-warriors" target="_blank" rel="noopener">View full stats on Tryline →</a>
-    </div>
-</div>
-
-<div class="footer">Data sourced from tryline.com.au · For entertainment purposes only</div>
-
+      <div class="summary">The Rabbitohs’ superior form and Johnston's history against the Raiders make a home win a near certainty.</div>
+      <a class="tryline-link" href="https://tryline.com.au/match/2661/2026-round-6-south-sydney-rabbitohs-vs-canberra-raiders" target="_blank" rel="noopener">View full stats on Tryline &rarr;</a>
+    </div></div>
+<div class="footer">Data sourced from tryline.com.au &middot; For entertainment purposes only</div>
 </body>
 </html>
