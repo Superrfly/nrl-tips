@@ -106,13 +106,29 @@ def generate_tip_card(match, elo=None):
             model="gemma3:12b",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": f"Generate a tip card for this match:\n\n{prompt_data}"},
+                {"role": "user", "content": f"Generate a tip card for this match:\n\n{prompt_data}\n\nRespond with only a JSON object. Start your response with {{ and end with }}"},
             ],
-            options={"temperature": 0.7},
+            options={"temperature": 0.3},
         )
         raw = response["message"]["content"].strip()
+
+        # Strip any markdown fences
         raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+
+        # Find the first { and last } to extract just the JSON object
+        start = raw.find("{")
+        end = raw.rfind("}")
+        if start == -1 or end == -1:
+            print(f"  ERROR: No JSON object found for {home} vs {away}")
+            print(f"  Raw snippet: {raw[:200]}")
+            return None
+        raw = raw[start:end+1]
+
         card = json.loads(raw)
+
+        # Override team names with actual scraped data in case model hallucinated
+        card["home_team"] = home
+        card["away_team"] = away
         card["match_url"] = match["url"]
         card["top_positions_home"] = positions["home"]
         card["top_positions_away"] = positions["away"]

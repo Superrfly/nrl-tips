@@ -84,41 +84,38 @@ def parse_ins_outs(text, home_team, away_team):
     current_team = None
     current_type = None
 
-    skip_phrases = [
-        "Team list", "At Fullback", "At Winger", "At Centre",
-        "Kick off", "Venue", "Weather", "Round", "Match",
-        "News", "Watch", "Draw", "Ladder", "Stats",
-        "Get Tickets", "Team Lists", "Team Stats"
-    ]
-
     i = 0
     while i < len(lines):
         line = lines[i]
 
-        matched_team = False
+        # Stop completely when full team list starts
+        if line.startswith("Team list for"):
+            break
+
+        # Detect section headers e.g. "Cowboys Ins", "Sea Eagles Outs"
+        matched_header = False
         for team_key, team_result_key in [
             (home_short, "home"),
             (home_short2, "home"),
             (away_short, "away"),
             (away_short2, "away"),
         ]:
-            if line.startswith(team_key):
+            if line.startswith(team_key) and ("Ins" in line or "Outs" in line):
                 current_team = team_result_key
-                if "Ins" in line or "ins" in line:
-                    current_type = "ins"
-                elif "Outs" in line or "outs" in line:
-                    current_type = "outs"
-                matched_team = True
+                current_type = "ins" if "Ins" in line else "outs"
+                matched_header = True
                 break
 
-        if not matched_team and line in ("INS", "OUTS"):
-            current_type = line.lower()
-        elif (not matched_team and
-              current_team and
-              current_type and
+        # INS/OUTS divider lines — just reset current_type, don't collect
+        if not matched_header and line in ("INS", "OUTS"):
+            current_type = None
+            current_team = None
+
+        # Collect player names — only between a header and the next header/divider
+        elif (not matched_header and
+              current_team is not None and
+              current_type is not None and
               len(line) > 2 and
-              not line.isupper() and
-              not any(x in line for x in skip_phrases) and
               re.match(r'^[A-Z][a-z]', line)):
             result[current_team][current_type].append(line)
 
