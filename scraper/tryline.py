@@ -31,11 +31,6 @@ def get_page_html(url: str, wait_ms: int = 2000) -> str:
 
 
 def scrape_all_tabs(url: str) -> dict:
-    """
-    Open a match page and scrape all 4 tabs:
-    Preview, Lineup, Stats, Tools
-    Returns a dict with raw HTML/text from each tab.
-    """
     results = {
         "preview": "",
         "lineup": "",
@@ -43,68 +38,93 @@ def scrape_all_tabs(url: str) -> dict:
         "tools": "",
     }
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-            locale="en-AU",
-        )
-        page = context.new_page()
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+                locale="en-AU",
+            )
+            page = context.new_page()
 
-        print(f"    Loading page...")
-        page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        page.wait_for_timeout(2500)
+            print(f"    Loading page...")
+            page.goto(url, wait_until="domcontentloaded", timeout=30000)
+            page.wait_for_timeout(2500)
 
-        # --- PREVIEW TAB (default) ---
-        print(f"    Scraping Preview tab...")
-        results["preview"] = page.inner_text("main") or ""
+            # Preview tab (default)
+            print(f"    Scraping Preview tab...")
+            try:
+                results["preview"] = page.inner_text("main") or ""
+            except Exception as e:
+                print(f"    WARNING: Preview failed: {e}")
 
-        # --- LINEUP TAB ---
-        print(f"    Scraping Lineup tab...")
-        try:
-            page.click("text=Lineup", timeout=5000)
-            page.wait_for_timeout(2000)
-            results["lineup"] = page.inner_text("main") or ""
-        except PlaywrightTimeout:
-            print(f"    WARNING: Lineup tab not found")
+            # Lineup tab
+            print(f"    Scraping Lineup tab...")
+            try:
+                page.click("text=Lineup", timeout=5000)
+                page.wait_for_timeout(2000)
+                results["lineup"] = page.inner_text("main") or ""
+            except Exception as e:
+                print(f"    WARNING: Lineup failed: {e}")
 
-        # --- STATS TAB ---
-        print(f"    Scraping Stats tab...")
-        try:
-            page.click("text=Stats", timeout=5000)
-            page.wait_for_timeout(2000)
-            results["stats"] = page.inner_text("main") or ""
-        except PlaywrightTimeout:
-            print(f"    WARNING: Stats tab not found")
+            # Stats tab
+            print(f"    Scraping Stats tab...")
+            try:
+                page.click("text=Stats", timeout=5000)
+                page.wait_for_timeout(2000)
+                results["stats"] = page.inner_text("main") or ""
+            except Exception as e:
+                print(f"    WARNING: Stats failed: {e}")
 
-        # --- TOOLS TAB ---
-        print(f"    Scraping Tools tab...")
-        try:
-            page.click("text=Tools", timeout=5000)
-            page.wait_for_timeout(2000)
+            # Tools tab
+            print(f"    Scraping Tools tab...")
+            try:
+                page.click("text=Tools", timeout=5000)
+                page.wait_for_timeout(2000)
 
-            # Tools has sub-sections: Attacking/Defending for each team
-            # Try to get all sub-tab content
-            tools_content = []
+                # Get home team view
+                home_tools = page.inner_text("main") or ""
+                results["tools"] = home_tools
 
-            # Default view
-            tools_content.append(page.inner_text("main") or "")
-
-            # Click through Attacking/Dragons/Sea Eagles sub-tabs if present
-            for sub_tab in ["Attacking", "Defending"]:
+                # Try to click away team button for their attacking positions
                 try:
-                    page.click(f"text={sub_tab}", timeout=3000)
-                    page.wait_for_timeout(1000)
-                    tools_content.append(page.inner_text("main") or "")
-                except PlaywrightTimeout:
-                    pass
+                    skip = {
+                        "Preview", "Lineup", "Stats", "Tools",
+                        "2026", "L5", "L10", "H2H", "RD",
+                        "1stH", "2ndH", "Feedback",
+                        "vs Top 4", "vs Top 8", "vs Bottom 9",
+                        "Attacking", "Defending"
+                    }
+                    all_buttons = page.locator("button").all()
+                    team_buttons = []
+                    for btn in all_buttons:
+                        try:
+                            txt = btn.inner_text().strip()
+                            if txt and txt not in skip:
+                                team_buttons.append((txt, btn))
+                        except Exception:
+                            pass
 
-            results["tools"] = "\n\n---\n\n".join(tools_content)
+                    # First button = home team, second = away team
+                    if len(team_buttons) >= 2:
+                        team_buttons[1][1].click()
+                        page.wait_for_timeout(1500)
+                        away_tools = page.inner_text("main") or ""
+                        results["tools"] = home_tools + "\n\nAWAY_TEAM_VIEW\n\n" + away_tools
+                        print(f"    Got away team tools view ({len(away_tools)} chars)")
+                    else:
+                        print(f"    WARNING: Could not find away team button (found {len(team_buttons)} team buttons)")
 
-        except PlaywrightTimeout:
-            print(f"    WARNING: Tools tab not found")
+                except Exception as e:
+                    print(f"    WARNING: Away team tab click failed: {e}")
 
-        browser.close()
+            except Exception as e:
+                print(f"    WARNING: Tools tab failed: {e}")
+
+            browser.close()
+
+    except Exception as e:
+        print(f"  ERROR in scrape_all_tabs: {e}")
 
     return results
 

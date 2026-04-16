@@ -400,7 +400,7 @@ def parse_overs_unders(tools_text: str) -> dict:
 def parse_match(match: dict) -> dict:
     """Takes a full scraped match dict and returns clean structured data."""
     data = match.get("data", {})
-    tabs = match.get("tabs", {})
+    tabs = match.get("tabs") or {}
     preview = tabs.get("preview", "")
     stats = tabs.get("stats", "")
     lineup = tabs.get("lineup", "")

@@ -61,7 +61,7 @@ def generate_tip_card(match, elo=None):
     print(f"  Generating tip card: {home} vs {away}...")
 
     parsed = parse_match(match)
-    tabs = match.get("tabs", {})
+    tabs = match.get("tabs") or {}
     positions = parse_scoring_by_position(tabs.get("tools", ""))
     parsed["positions"] = positions
 
