@@ -3,183 +3,214 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NRL Tips &mdash; Round 6, 2026</title>
+  <title>NRL Tips &mdash; Round 7, 2026</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0f0f0f; --surface: #1a1a1a; --surface2: #222;
-      --border: rgba(255,255,255,0.08); --text: #f0f0f0; --muted: #888;
-      --radius: 12px;
-    }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 0 0 4rem; }
-    .site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem; position: sticky; top: 0; z-index: 10; }
-    .site-header h1 { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
-    .site-header .sub { font-size: 12px; color: var(--muted); }
-    .nav { display: flex; gap: 8px; flex-wrap: wrap; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 60px; z-index: 9; }
-    .nav a { font-size: 12px; color: var(--muted); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 20px; transition: all 0.15s; }
-    .nav a:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.25rem; max-width: 1200px; margin: 1.5rem auto; padding: 0 1.25rem; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
-    .card-header { padding: 1rem 1.1rem 0.75rem; border-bottom: 1px solid var(--border); }
-    .game-label { font-size: 10px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
-    .matchup { font-size: 17px; font-weight: 600; line-height: 1.3; }
-    .vs { color: var(--muted); font-weight: 400; font-size: 14px; margin: 0 4px; }
-    .meta { font-size: 12px; color: var(--muted); margin-top: 3px; }
-    .tip-bar { display: flex; align-items: center; gap: 10px; padding: 0.6rem 1.1rem; border-left: 4px solid transparent; }
-    .tip-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; }
-    .tip-team { font-size: 14px; font-weight: 600; flex: 1; }
-    .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; padding: 0.75rem 1.1rem 0.25rem; }
-    .quick-hits { padding: 0 1.1rem 0.5rem; }
-    .qh-row { display: flex; gap: 9px; align-items: flex-start; margin-bottom: 8px; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-    .qh-text { font-size: 13px; line-height: 1.55; color: #ccc; }
-    .positions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 1.1rem 0.75rem; }
-    .pos-block { background: var(--surface2); border-radius: 8px; padding: 0.65rem 0.75rem; border: 1px solid var(--border); }
-    .pos-team-name { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-    .pos-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; font-size: 12px; }
-    .pos-code { font-weight: 700; color: #eee; min-width: 30px; }
-    .pos-label { color: var(--muted); font-size: 11px; flex: 1; }
-    .pos-scored { color: #639922; font-weight: 600; min-width: 24px; }
-    .pos-conceded { color: #E24B4A; font-weight: 600; min-width: 24px; }
-    .ats-section { padding: 0 1.1rem 0.5rem; display: flex; flex-direction: column; gap: 10px; }
-    .ats-block { background: var(--surface2); border-radius: 8px; padding: 0.65rem 0.85rem; border: 1px solid var(--border); }
-    .ats-header { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; margin-bottom: 5px; }
-    .ats-name { font-size: 13px; font-weight: 600; flex: 1; }
-    .ats-odds { font-size: 12px; color: var(--muted); }
-    .ats-body { font-size: 12px; line-height: 1.6; color: #aaa; }
-    .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
-    .badge-green { background: #EAF3DE; color: #3B6D11; }
-    .badge-amber { background: #FAEEDA; color: #633806; }
-    .summary { font-size: 13px; font-weight: 500; color: #ddd; padding: 0.75rem 1.1rem; border-top: 1px solid var(--border); margin-top: auto; line-height: 1.5; }
-    .tryline-link { display: block; font-size: 11px; color: var(--muted); text-decoration: none; padding: 0.5rem 1.1rem; border-top: 1px solid var(--border); transition: color 0.15s; }
-    .tryline-link:hover { color: var(--text); }
-    .footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 2rem; }
-    @media (max-width: 600px) {
-      .cards-grid { grid-template-columns: 1fr; padding: 0 0.75rem; }
-      .nav { top: 56px; }
-    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#1f2233;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:#6b7080;--green:#639922;--amber:#BA7517;--red:#E24B4A;--radius:12px}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:4rem}
+    .site-header{text-align:center;padding:2rem 1rem 0.5rem}
+    .site-header h1{font-size:1.5rem;font-weight:700}
+    .sub{font-size:12px;color:var(--muted);margin-top:4px}
+    .nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--border);padding:0.5rem 1rem;display:flex;gap:0.5rem;flex-wrap:wrap;z-index:10}
+    .nav a{font-size:11px;color:var(--muted);text-decoration:none;padding:3px 8px;border:1px solid var(--border);border-radius:4px}
+    .nav a:hover{color:var(--text)}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.25rem;padding:1.5rem;max-width:1400px;margin:0 auto}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);display:flex;flex-direction:column;overflow:hidden}
+    .card-header{padding:1rem 1.1rem 0.75rem;border-bottom:1px solid var(--border)}
+    .game-label{font-size:10px;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+    .matchup{font-size:17px;font-weight:600}
+    .vs{color:var(--muted);font-weight:400;font-size:14px;margin:0 6px}
+    .meta{font-size:11px;color:var(--muted);margin-top:4px}
+    .tip-bar{display:flex;align-items:center;gap:10px;padding:0.6rem 1.1rem}
+    .tip-label{font-size:10px;font-weight:700;letter-spacing:0.1em}
+    .tip-team{font-size:14px;font-weight:600;flex:1}
+    .prob-bar-section{padding:0.5rem 1.1rem 0}
+    .prob-label{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:4px}
+    .prob-title{font-size:10px;color:var(--muted);opacity:0.7}
+    .prob-bar{display:flex;height:6px;border-radius:3px;overflow:hidden}
+    .prob-home{background:var(--green)}
+    .prob-away{background:#3a4a5c}
+    .elo-nums{font-size:10px;color:var(--muted);padding:4px 1.1rem 0}
+    .elo-nums strong{color:var(--text)}
+    .section-label{font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;padding:0.75rem 1.1rem 0.25rem}
+    .quick-hits{padding:0 1.1rem 0.5rem}
+    .qh-row{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px}
+    .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
+    .qh-text{font-size:12px;line-height:1.55;color:#ccc}
+    .injury-section{padding:0 1.1rem 0.5rem}
+    .injury-item{font-size:12px;color:#f0a070;margin-bottom:4px;line-height:1.5}
+    .positions-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 1.1rem 0.75rem}
+    .pos-block{background:var(--surface2);border-radius:8px;padding:0.65rem 0.75rem;border:1px solid var(--border)}
+    .pos-team-name{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
+    .pos-row{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:12px}
+    .pos-code{font-weight:700;color:#eee;min-width:30px}
+    .pos-label{color:var(--muted);font-size:11px;flex:1}
+    .pos-scored{color:var(--green);font-weight:600;min-width:24px}
+    .pos-conceded{color:var(--red);font-weight:600;min-width:24px}
+    .ou-block{display:flex;align-items:center;gap:10px;padding:0.4rem 1.1rem 0.75rem;font-size:13px}
+    .ou-pick{font-weight:700;font-size:14px}
+    .ou-reason{color:var(--muted);font-size:12px}
+    .ats-section{padding:0 1.1rem 0.5rem;display:flex;flex-direction:column;gap:10px}
+    .ats-block{background:var(--surface2);border-radius:8px;padding:0.65rem 0.85rem;border:1px solid var(--border)}
+    .ats-header{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:5px}
+    .ats-name{font-size:13px;font-weight:600;flex:1}
+    .ats-odds{font-size:12px;color:var(--muted)}
+    .ats-body{font-size:12px;line-height:1.6;color:#aaa}
+    .badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;flex-shrink:0}
+    .badge-green{background:#EAF3DE;color:#3B6D11}
+    .badge-amber{background:#FAEEDA;color:#633806}
+    .summary{font-size:13px;font-weight:500;color:#ddd;padding:0.75rem 1.1rem;border-top:1px solid var(--border);margin-top:auto;line-height:1.5}
+    .tryline-link{display:block;font-size:11px;color:var(--muted);text-decoration:none;padding:0.5rem 1.1rem;border-top:1px solid var(--border);transition:color 0.15s}
+    .tryline-link:hover{color:var(--text)}
+    .footer{text-align:center;font-size:12px;color:var(--muted);margin-top:2rem;padding-bottom:2rem}
+    @media(max-width:600px){.cards-grid{grid-template-columns:1fr;padding:0.75rem}}
   </style>
 </head>
 <body>
 <header class="site-header">
-  <h1>NRL Tips &mdash; Round 6, 2026</h1>
-  <div class="sub">Generated 11 april 2026, 8:08am &middot; Data via Tryline &middot; gemma3:12b</div>
+  <h1>NRL Tips &mdash; Round 7, 2026</h1>
+  <div class="sub">Generated 16 Apr 2026, 03:14 PM &middot; Tryline stats + ELO model &middot; gemma3:12b</div>
 </header>
-<nav class="nav"><a href="#game-1">Rabbitohs v Raiders</a></nav>
+<nav class="nav"><a href="#game-1">Cowboys v Eagles</a>
+</nav>
 <div class="cards-grid">
     <div class="card" id="game-1">
       <div class="card-header">
         <div class="game-label">GAME 1</div>
-        <div class="matchup">South Sydney Rabbitohs <span class="vs">v</span> Canberra Raiders</div>
-        <div class="meta">Round 6 &middot; 2026 &middot; Optus Stadium, Perth</div>
+        <div class="matchup">North Queensland Cowboys <span class="vs">v</span> Manly-Warringah Sea Eagles</div>
+        <div class="meta">Round 7 &middot; 2026 &middot; Queensland Country Bank Stadium, Townsville</div>
       </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-color:#639922;">
+      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
         <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">South Sydney Rabbitohs</div>
+        <div class="tip-team" style="color:#3B6D11;">North Queensland Cowboys</div>
         <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
       </div>
+      
+    <div class="prob-bar-section">
+      <div class="prob-label">
+        <span>Cowboys 57%</span>
+        <span class="prob-title">Win Probability (ELO)</span>
+        <span>Eagles 43%</span>
+      </div>
+      <div class="prob-bar">
+        <div class="prob-home" style="width:57.1%"></div>
+        <div class="prob-away" style="width:42.9%"></div>
+      </div>
+    </div>
+      <div class="elo-nums">ELO &mdash; Cowboys: <strong>1500</strong> &nbsp;|&nbsp; Eagles: <strong>1500</strong></div>
       <div class="section-label">QUICK HITS</div>
       <div class="quick-hits">
         <div class="qh-row">
+          <div class="dot" style="background:#BA7517"></div>
+          <div class="qh-text">The head-to-head record is tight, with Manly leading 3-2 but the Cowboys have won the last match.</div>
+        </div>
+        <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">South Sydney currently sits 4th on the ladder with a +14 point differential, showcasing their strong form.</div>
+          <div class="qh-text">The Cowboys are currently fourth on the ladder with a +16 differential, indicating a strong recent form.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Raiders are languishing in 16th position with a significant -69 point differential.</div>
+          <div class="qh-text">Both teams average 4.8 tries per game, suggesting a potentially high-scoring contest.</div>
+        </div>
+        <div class="qh-row">
+          <div class="dot" style="background:#E24B4A"></div>
+          <div class="qh-text">Neither team has managed to score first in any game this season, highlighting a slow start to matches.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">South Sydney have shown resilience, overcoming halftime deficits in recent games.</div>
+          <div class="qh-text">Cowboys' right side attack ranks 4th, while Manly’s left side defence ranks 7th, setting up a potential matchup battle.</div>
+        </div>
+        <div class="qh-row">
+          <div class="dot" style="background:#BA7517"></div>
+          <div class="qh-text">The ELO model gives the Cowboys a 57% chance of winning, indicating a slight advantage.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Alex Johnston has a dominant record against the Raiders, scoring 4 tries in his last 4 encounters.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Canberra’s right-side defence is the worst in the competition, conceding the most tries.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">South Sydney's left wing has been a consistent scoring threat, registering 5 tries while conceding only 3.</div>
+          <div class="qh-text">Cowboys have won 4 straight games after a slow start to the year.</div>
         </div></div>
+      
       
       <div class="section-label">TOP SCORING POSITIONS</div>
       <div class="positions-grid">
         <div class="pos-block">
-          <div class="pos-team-name">Rabbitohs</div>
+          <div class="pos-team-name">Cowboys</div>
           
           <div class="pos-row">
             <span class="pos-code">LW</span>
             <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;3</span>
+            <span class="pos-scored">&#9650;6</span>
+            <span class="pos-conceded">&#9660;2</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">LC</span>
             <span class="pos-label">Left Centre</span>
             <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;2</span>
+            <span class="pos-conceded">&#9660;1</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">RW</span>
             <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;4</span>
+            <span class="pos-scored">&#9650;5</span>
+            <span class="pos-conceded">&#9660;7</span>
           </div>
         </div>
         <div class="pos-block">
-          <div class="pos-team-name">Raiders</div>
+          <div class="pos-team-name">Eagles</div>
           
           <div class="pos-row">
             <span class="pos-code">RW</span>
             <span class="pos-label">Right Wing</span>
+            <span class="pos-scored">&#9650;7</span>
+            <span class="pos-conceded">&#9660;5</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">FB</span>
+            <span class="pos-label">Fullback</span>
             <span class="pos-scored">&#9650;4</span>
             <span class="pos-conceded">&#9660;3</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">LW</span>
             <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">L2R</span>
-            <span class="pos-label">Left 2nd Row</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;0</span>
+            <span class="pos-scored">&#9650;2</span>
+            <span class="pos-conceded">&#9660;6</span>
           </div>
         </div></div>
+      <div class="section-label">O/U PICK</div>
+      
+      <div class="ou-block">
+        <span class="ou-pick" style="color:#E24B4A;">UNDER +50.5</span>
+        <span class="ou-reason">Given both teams' struggles to score first and their similar scoring averages, the Under line looks appealing, especially considering the Cowboys' strong defensive line.</span>
+      </div>
       <div class="section-label">ATS / VALUE</div>
       <div class="ats-section">
         <div class="ats-block" style="border-left: 3px solid #639922;">
           <div class="ats-header">
             <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Alex Johnston &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Braidon Burns &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Johnston’s history against the Raiders is undeniable, and Souths' attack will exploit Canberra’s weak right-side defence.  He’s a must-have for any ATS portfolio.</div>
+          <div class="ats-body">Burns has a strong record against Manly, having scored 3 tries in his last 3 games. With the Cowboys' potent attack and Burns' proven ability to finish, he's a solid Anytime Tryscorer option.</div>
         </div>
         <div class="ats-block" style="">
           <div class="ats-header">
             
-            <span class="ats-name">Campbell Graham &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Scott Drinkwater &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Positioned on the right wing, Graham is primed to capitalise on Canberra's defensive vulnerabilities, offering good value.</div>
+          <div class="ats-body">Drinkwater is celebrating his 150th game and is likely to be motivated to perform well.  His playmaking ability often leads to opportunities near the line.</div>
         </div>
         <div class="ats-block" style="border-left: 3px solid #BA7517;">
           <div class="ats-header">
             <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Liam Mitchell &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Jason Saab &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">While the Raiders' attack has struggled, Mitchell's speed and positioning could create an opportunity; a sneaky value play.</div>
+          <div class="ats-body">Saab has a good record against the Cowboys, scoring 6 tries in his last 3 games. Despite the Cowboys' solid defence, Saab's finishing ability makes him a value play.</div>
         </div></div>
-      <div class="summary">The Rabbitohs’ superior form and Johnston's history against the Raiders make a home win a near certainty.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2661/2026-round-6-south-sydney-rabbitohs-vs-canberra-raiders" target="_blank" rel="noopener">View full stats on Tryline &rarr;</a>
+      <div class="summary">Backing the Cowboys at home with high confidence, the Under total points looks to be the smart play.</div>
+      <a class="tryline-link" href="https://tryline.com.au/match/2666/2026-round-7-north-queensland-cowboys-vs-manly-warringah-sea-eagles" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
     </div></div>
-<div class="footer">Data sourced from tryline.com.au &middot; For entertainment purposes only</div>
+<div class="footer">Data: tryline.com.au + ELO model &middot; For entertainment purposes only</div>
 </body>
 </html>
