@@ -128,6 +128,14 @@ def parse_ins_outs(text, home_team, away_team):
     return result
 
 
+def _team_names_from_slug(slug: str):
+    """Parse home/away team names from a tryline slug like 2026-round-10-dragons-vs-knights."""
+    m = re.match(r'^\d{4}-round-\d+-(.+)-vs-(.+)$', slug or "")
+    if not m:
+        return "", ""
+    return m.group(1).replace("-", " ").title(), m.group(2).replace("-", " ").title()
+
+
 def fetch_injury_data(season, round_num, matches=None):
     if not matches:
         return {}
@@ -138,6 +146,8 @@ def fetch_injury_data(season, round_num, matches=None):
         data = match.get("data", {})
         home = data.get("home_team", {}).get("display_name", "")
         away = data.get("away_team", {}).get("display_name", "")
+        if not home or not away:
+            home, away = _team_names_from_slug(match.get("slug", ""))
         if home and away:
             injuries = scrape_match_injuries(home, away, season, round_num)
             injury_data[match_id] = injuries

@@ -10,7 +10,7 @@ sys.path.insert(0, str(ROOT))
 
 from scraper.tryline import scrape_round, scrape_match
 from analyser import analyse_round
-from scraper.injuries import fetch_injury_data, get_team_injuries
+from scraper.injuries import fetch_injury_data, get_team_injuries, _team_names_from_slug
 from generator.cards import generate_all_cards
 from generator.renderer import save_site
 
@@ -84,6 +84,8 @@ def main():
         away_inj = match["away_injuries"]
         home_name = match.get("data", {}).get("home_team", {}).get("display_name", "")
         away_name = match.get("data", {}).get("away_team", {}).get("display_name", "")
+        if not home_name or not away_name:
+            home_name, away_name = _team_names_from_slug(match.get("slug", ""))
         if home_inj.get("ins") or home_inj.get("outs"):
             print(f"  {home_name} — IN: {home_inj.get('ins', [])} | OUT: {home_inj.get('outs', [])}")
         if away_inj.get("ins") or away_inj.get("outs"):

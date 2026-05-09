@@ -7,6 +7,7 @@ from typing import Optional
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from scraper.positions import parse_scoring_by_position
 from scraper.parser import parse_match, format_parsed_for_prompt
+from scraper.injuries import _team_names_from_slug
 
 
 SYSTEM_PROMPT = """You are an expert NRL analyst producing tip cards for a weekly footy tipping page shared with friends.
@@ -56,13 +57,17 @@ Rules:
 
 
 def generate_tip_card(match, elo=None):
-    home = match["data"].get("home_team", {}).get("display_name", "Home")
-    away = match["data"].get("away_team", {}).get("display_name", "Away")
+    home = match["data"].get("home_team", {}).get("display_name", "")
+    away = match["data"].get("away_team", {}).get("display_name", "")
+    if not home or not away:
+        home, away = _team_names_from_slug(match.get("slug", ""))
+    home = home or "Home"
+    away = away or "Away"
     print(f"  Generating tip card: {home} vs {away}...")
 
     parsed = parse_match(match)
     tabs = match.get("tabs") or {}
-    positions = parse_scoring_by_position(tabs.get("tools", ""))
+    positions = parse_scoring_by_position(tabs.get("tools", ""), home_team=home, away_team=away)
     parsed["positions"] = positions
 
     prompt_data = format_parsed_for_prompt(parsed, elo)
@@ -93,11 +98,11 @@ def generate_tip_card(match, elo=None):
         pos_lines.append("\n--- SCORING BY POSITION ---")
         pos_lines.append(f"{home} top scoring positions:")
         for p in positions["home"]:
-            pos_lines.append(f"  {p['position']} ({p['label']}): scored {p['scored']}, conceded {p['conceded']}")
+            pos_lines.append(f"  {p['position']} ({p['label']}): scored {p['scored']}, opp_conceded {p['opp_conceded']}")
     if positions["away"]:
         pos_lines.append(f"{away} top scoring positions:")
         for p in positions["away"]:
-            pos_lines.append(f"  {p['position']} ({p['label']}): scored {p['scored']}, conceded {p['conceded']}")
+            pos_lines.append(f"  {p['position']} ({p['label']}): scored {p['scored']}, opp_conceded {p['opp_conceded']}")
     if pos_lines:
         prompt_data += "\n" + "\n".join(pos_lines)
 

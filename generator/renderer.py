@@ -51,21 +51,28 @@ def render_prob_bar(home_team: str, away_team: str, home_prob) -> str:
     </div>"""
 
 
-def render_positions_block(positions: list, team_name: str) -> str:
+def render_positions_block(positions: list, attack_team: str, defend_team: str) -> str:
     if not positions:
         return ""
-    rows = ""
-    for p in positions[:3]:
+    defend_short = defend_team.split()[-1]
+    rows = f"""
+          <div class="pos-row pos-header">
+            <span class="pos-code"></span>
+            <span class="pos-label"></span>
+            <span class="pos-scored">Scored</span>
+            <span class="pos-conceded">{defend_short} conc.</span>
+          </div>"""
+    for p in positions[:4]:
         rows += f"""
           <div class="pos-row">
             <span class="pos-code">{p.get('position','')}</span>
             <span class="pos-label">{p.get('label','')}</span>
-            <span class="pos-scored">&#9650;{p.get('scored',0)}</span>
-            <span class="pos-conceded">&#9660;{p.get('conceded',0)}</span>
+            <span class="pos-scored">&#9650; {p.get('scored',0)}</span>
+            <span class="pos-conceded">&#9660; {p.get('opp_conceded', p.get('conceded', 0))}</span>
           </div>"""
     return f"""
         <div class="pos-block">
-          <div class="pos-team-name">{team_name.split()[-1]}</div>
+          <div class="pos-team-name">{attack_team.split()[-1]} Attack</div>
           {rows}
         </div>"""
 
@@ -96,19 +103,21 @@ def render_card(card: dict, game_num: int) -> str:
       <div class="section-label">INJURY CONCERNS</div>
       <div class="injury-section">{items}</div>"""
 
-    # Scoring positions
+    # Scoring positions vs defence
     home_pos = render_positions_block(
         card.get("top_positions_home", []),
-        card.get("home_team_name", home_team)
+        card.get("home_team_name", home_team),
+        card.get("away_team_name", away_team),
     )
     away_pos = render_positions_block(
         card.get("top_positions_away", []),
-        card.get("away_team_name", away_team)
+        card.get("away_team_name", away_team),
+        card.get("home_team_name", home_team),
     )
     positions_html = ""
     if home_pos or away_pos:
         positions_html = f"""
-      <div class="section-label">TOP SCORING POSITIONS</div>
+      <div class="section-label">SCORING POSITIONS vs DEFENCE</div>
       <div class="positions-grid">{home_pos}{away_pos}</div>"""
 
     # O/U pick
@@ -231,10 +240,11 @@ def render_page(cards: list, round_num: int, season: int) -> str:
     .pos-block{{background:var(--surface2);border-radius:8px;padding:0.65rem 0.75rem;border:1px solid var(--border)}}
     .pos-team-name{{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}}
     .pos-row{{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:12px}}
+    .pos-header .pos-scored,.pos-header .pos-conceded{{color:var(--muted);font-weight:400;font-size:10px;letter-spacing:0.04em}}
     .pos-code{{font-weight:700;color:#eee;min-width:30px}}
     .pos-label{{color:var(--muted);font-size:11px;flex:1}}
-    .pos-scored{{color:var(--green);font-weight:600;min-width:24px}}
-    .pos-conceded{{color:var(--red);font-weight:600;min-width:24px}}
+    .pos-scored{{color:var(--green);font-weight:600;min-width:42px;text-align:right}}
+    .pos-conceded{{color:var(--red);font-weight:600;min-width:52px;text-align:right}}
     .ou-block{{display:flex;align-items:center;gap:10px;padding:0.4rem 1.1rem 0.75rem;font-size:13px}}
     .ou-pick{{font-weight:700;font-size:14px}}
     .ou-reason{{color:var(--muted);font-size:12px}}

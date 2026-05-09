@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NRL Tips &mdash; Round 7, 2026</title>
+  <title>NRL Tips &mdash; Round 10, 2026</title>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#1f2233;--border:rgba(255,255,255,0.07);--text:#e8eaf0;--muted:#6b7080;--green:#639922;--amber:#BA7517;--red:#E24B4A;--radius:12px}
@@ -43,10 +43,11 @@
     .pos-block{background:var(--surface2);border-radius:8px;padding:0.65rem 0.75rem;border:1px solid var(--border)}
     .pos-team-name{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px}
     .pos-row{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:12px}
+    .pos-header .pos-scored,.pos-header .pos-conceded{color:var(--muted);font-weight:400;font-size:10px;letter-spacing:0.04em}
     .pos-code{font-weight:700;color:#eee;min-width:30px}
     .pos-label{color:var(--muted);font-size:11px;flex:1}
-    .pos-scored{color:var(--green);font-weight:600;min-width:24px}
-    .pos-conceded{color:var(--red);font-weight:600;min-width:24px}
+    .pos-scored{color:var(--green);font-weight:600;min-width:42px;text-align:right}
+    .pos-conceded{color:var(--red);font-weight:600;min-width:52px;text-align:right}
     .ou-block{display:flex;align-items:center;gap:10px;padding:0.4rem 1.1rem 0.75rem;font-size:13px}
     .ou-pick{font-weight:700;font-size:14px}
     .ou-reason{color:var(--muted);font-size:12px}
@@ -68,870 +69,27 @@
 </head>
 <body>
 <header class="site-header">
-  <h1>NRL Tips &mdash; Round 7, 2026</h1>
-  <div class="sub">Generated 17 Apr 2026, 06:18 AM &middot; Tryline stats + ELO model &middot; gemma3:12b</div>
+  <h1>NRL Tips &mdash; Round 10, 2026</h1>
+  <div class="sub">Generated 09 May 2026, 02:51 PM &middot; Tryline stats + ELO model &middot; gemma3:12b</div>
 </header>
-<nav class="nav"><a href="#game-1">Home v Away</a>
-<a href="#game-2">Raiders v Storm</a>
-<a href="#game-3">Dolphins v Panthers</a>
-<a href="#game-4">Warriors v Titans</a>
-<a href="#game-5">Rabbitohs v Dragons</a>
-<a href="#game-6">Tigers v Broncos</a>
-<a href="#game-7">Roosters v Knights</a>
-<a href="#game-8">Eels v Bulldogs</a>
+<nav class="nav"><a href="#game-1">Dragons v Knights</a>
 </nav>
 <div class="cards-grid">
     <div class="card" id="game-1">
       <div class="card-header">
         <div class="game-label">GAME 1</div>
-        <div class="matchup">Home <span class="vs">v</span> Away</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; Undetermined</div>
+        <div class="matchup">St George Illawarra Dragons <span class="vs">v</span> Newcastle Knights</div>
+        <div class="meta">Round 13 &middot; 2026 &middot; Venue name</div>
       </div>
       <div class="tip-bar" style="background:#FAEEDA; border-left:4px solid #BA7517;">
         <div class="tip-label" style="color:#633806;">TIP</div>
-        <div class="tip-team" style="color:#633806;">Cowboys</div>
+        <div class="tip-team" style="color:#633806;">Newcastle Knights</div>
         <div class="tip-conf" style="color:#633806; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">Medium confidence</div>
       </div>
       
     <div class="prob-bar-section">
       <div class="prob-label">
-        <span>Home 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Away 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Home: <strong>1500</strong> &nbsp;|&nbsp; Away: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Cowboys have won the last two encounters against the Sea Eagles, both by significant margins.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The ELO model gives the Cowboys a 57% win probability, suggesting a slight advantage.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Both teams have identical ELO ratings, indicating a closely matched contest on paper.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Cowboys' Hess had a strong performance in the last meeting, scoring 21 points.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Cowboys' Drinkwater and Dearden will need to control the game to secure victory.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Sea Eagles' Trbojevic is a key player and his presence will be crucial.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Cowboys' Taumalolo and Hess will provide strong go-forward in the middle.</div>
-        </div></div>
-      
-      
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#E24B4A;">UNDER N/A</span>
-        <span class="ou-reason">Given the lack of data on scoring averages and the evenly matched ELO ratings, a conservative under bet seems prudent.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">C Hess &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Hess has consistently performed well against the Sea Eagles, scoring 21 points in their last encounter and demonstrating a nose for the try line. His power and skill make him a likely threat.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">D Dearden &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Dearden's playmaking ability often leads to opportunities close to the line, and he's capable of finishing off attacking plays. He'll be looking to exploit any defensive lapses.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">T Trbojevic &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Trbojevic's powerful runs and ability to offload make him a consistent try-scoring threat, even when playing a more support role.</div>
-        </div></div>
-      <div class="summary">The Cowboys' recent dominance and slight ELO advantage point towards a home win.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2666/2026-round-7-north-queensland-cowboys-vs-manly-warringah-sea-eagles" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-2">
-      <div class="card-header">
-        <div class="game-label">GAME 2</div>
-        <div class="matchup">Canberra Raiders <span class="vs">v</span> Melbourne Storm</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; GIO Stadium, Canberra</div>
-      </div>
-      <div class="tip-bar" style="background:#FAEEDA; border-left:4px solid #BA7517;">
-        <div class="tip-label" style="color:#633806;">TIP</div>
-        <div class="tip-team" style="color:#633806;">Canberra Raiders</div>
-        <div class="tip-conf" style="color:#633806; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">Medium confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Raiders 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Storm 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Raiders: <strong>1500</strong> &nbsp;|&nbsp; Storm: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Kaeo Weekes has scored 2 tries in L2 games against the Storm.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Haven't won by more than 12 points this season.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Harry Grant has scored 3 tries in L4 games against the Raiders. </div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Raiders secured a narrow victory in their last H2H encounter against the Storm, demonstrating their ability to compete.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Storm have suffered four consecutive losses, indicating a significant drop in form and confidence.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Both teams have a record of two wins and four losses this season, suggesting a closely contested match.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Raiders have scored first in 67% of their games, showcasing a capacity to establish early dominance.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Storm’s first-half average of 14.3 points is offset by a concerning 12.3 points conceded in the second half.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Canberra's right-side attack ranks 15th, while Melbourne's left-side defence is ranked 3rd, suggesting a potential area of focus.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The ELO model favours the Raiders with a 57% win probability, reflecting their recent resilience.</div>
-        </div></div>
-      
-      <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; Canberra Raiders: Savelio Tamale — OUT</div><div class="injury-item">&#9888; Melbourne Storm: Lazarus Vaalepu — OUT</div><div class="injury-item">&#9888; Melbourne Storm: Moses Leo — OUT</div><div class="injury-item">&#9888; Canberra Raiders: Matthew Timoko — IN</div><div class="injury-item">&#9888; Canberra Raiders: Owen Pattie — IN</div><div class="injury-item">&#9888; Melbourne Storm: Hugo Peel — IN</div><div class="injury-item">&#9888; Melbourne Storm: Shawn Blore — IN</div><div class="injury-item">&#9888; Melbourne Storm: Trent Toelau — IN</div></div>
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Raiders</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">L2R</span>
-            <span class="pos-label">Left 2nd Row</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;1</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Storm</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;8</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;6</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RC</span>
-            <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#E24B4A;">UNDER +51.5</span>
-        <span class="ou-reason">Given both teams' struggles to score consistently and the Storm's recent defensive vulnerabilities, the under is the smarter play.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Kaeo Weekes &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Weekes has a history of scoring against the Storm, having crossed twice in their last two encounters, and is in good form with two tries in his last two games. His speed and agility make him a constant threat on the wing.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Harry Grant &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Grant has a knack for finding the line and has scored in three of his last four games against the Raiders, demonstrating his ability to exploit defensive lapses.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Matthew Timoko &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Timoko’s return strengthens the Raiders’ forward pack and provides an extra attacking option close to the line, making him a value play for a try.</div>
-        </div></div>
-      <div class="summary">GIO Stadium will be a cauldron of intensity as the Raiders look to capitalise on the Storm's form slump.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2667/2026-round-7-canberra-raiders-vs-melbourne-storm" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-3">
-      <div class="card-header">
-        <div class="game-label">GAME 3</div>
-        <div class="matchup">Dolphins <span class="vs">v</span> Penrith Panthers</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; TIO Stadium, Darwin</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Penrith Panthers</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Dolphins 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Panthers 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Dolphins: <strong>1500</strong> &nbsp;|&nbsp; Panthers: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Hamiso Tabuai-Fidow has scored 7 tries in L4 games against the Panthers.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Moses Leota has scored in all 3 games against the Dolphins.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Dolphins have scored first just once in five games this season, highlighting their slow starts.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Penrith's dominant attack ranks them 4th overall, a stark contrast to the Dolphins' 15th-ranked attack.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Dolphins' defence sits outside the top 10, struggling to contain consistent attacking sides like Penrith.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Penrith’s left side defence is the best in the competition, conceding just 8 tries.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Penrith’s first half average of 21.3 points demonstrates their ability to dictate the tempo early.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Dolphins' ELO model gives them a 57% win probability, but the Panthers' overall strength is undeniable.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Moses Leota has scored in all three games against the Dolphins, suggesting a familiarity and advantage.</div>
-        </div></div>
-      
-      <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; Dolphins: Kurt Donoghoe — OUT</div><div class="injury-item">&#9888; Penrith Panthers: Casey McLean — OUT</div><div class="injury-item">&#9888; Penrith Panthers: Liam Martin — OUT</div><div class="injury-item">&#9888; Dolphins: Brian Pouniu — IN</div><div class="injury-item">&#9888; Dolphins: Oryn Keeley — IN</div><div class="injury-item">&#9888; Penrith Panthers: Jack Cole — IN</div><div class="injury-item">&#9888; Penrith Panthers: Kalani Going — IN</div><div class="injury-item">&#9888; Penrith Panthers: Sione Fonua — IN</div></div>
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Dolphins</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RC</span>
-            <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;3</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;1</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Panthers</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;14</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;3</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">LC</span>
-            <span class="pos-label">Left Centre</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#E24B4A;">UNDER +51.5</span>
-        <span class="ou-reason">Despite Penrith's attacking prowess, the Dolphins' defensive struggles and the game being played in Darwin's potentially challenging conditions suggest a lower-scoring affair.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Brian To'o &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">To'o consistently finds space on the left wing, and Penrith’s left wing attack is their strongest area, having scored 14 tries. With the Dolphins' defence struggling on that side, he's primed for a try.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Nathan Cleary &mdash; First Try Scorer</span>
-            
-          </div>
-          <div class="ats-body">Cleary has been involved in the opening try of several games, and his playmaking ability often creates opportunities for himself and his teammates.  His experience and game sense make him a threat.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Sunia Turuva &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Turuva is a consistent try scorer and with the Dolphins' right side attack ranked 12th, he could exploit any defensive lapses.</div>
-        </div></div>
-      <div class="summary">Penrith's superior attack and defence, coupled with key Dolphins injuries, make them the clear favourites in Darwin.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2668/2026-round-7-dolphins-vs-penrith-panthers" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-4">
-      <div class="card-header">
-        <div class="game-label">GAME 4</div>
-        <div class="matchup">New Zealand Warriors <span class="vs">v</span> Gold Coast Titans</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; Go Media Stadium, Auckland</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">New Zealand Warriors</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Warriors 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Titans 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Warriors: <strong>1500</strong> &nbsp;|&nbsp; Titans: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Roger Tuivasa-Sheck has scored 3 tries in L3 games against the Titans.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Have conceded 6 tries to FB this year. </div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Beau Fermor has scored 2 tries in L3 games against the Warriors.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Have won their L3 games at Go Media Stadium.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Warriors have won their last three games against the Titans at Go Media Stadium, showcasing their home ground advantage.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Warriors' right side attack is the best in the league, posing a significant threat to the Titans' left side defence.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Warriors halves Boyd and Harris-Tavita are in excellent form, consistently generating attacking opportunities.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Titans have struggled to score first in all six games this season, indicating a slow start problem.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Warriors' scoring trends show a significant difference between their first and second-half performances.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Warriors' ELO rating suggests a 57% chance of victory, aligning with their strong form.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Titans' overall attack rank is 9th, suggesting they may struggle to consistently penetrate the Warriors' defence.</div>
-        </div></div>
-      
-      <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; New Zealand Warriors: Tanner Stowers-Smith — OUT</div><div class="injury-item">&#9888; Gold Coast Titans: No changes to team from previous round — OUT</div><div class="injury-item">&#9888; New Zealand Warriors: Charnze Nicoll-Klokstad — IN</div><div class="injury-item">&#9888; New Zealand Warriors: Kurt Capewell — IN</div><div class="injury-item">&#9888; New Zealand Warriors: Mitchell Barnett — IN</div><div class="injury-item">&#9888; New Zealand Warriors: Morgan Gannon — IN</div><div class="injury-item">&#9888; Gold Coast Titans: Jensen Taumoepeau — IN</div><div class="injury-item">&#9888; Gold Coast Titans: Josh Patston — IN</div><div class="injury-item">&#9888; Gold Coast Titans: Klese Haas — IN</div></div>
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Warriors</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;7</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RC</span>
-            <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">PR</span>
-            <span class="pos-label">Prop</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;1</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Titans</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">HLF</span>
-            <span class="pos-label">Halfback</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;0</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;1</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">R2R</span>
-            <span class="pos-label">Right 2nd Row</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#639922;">OVER +51.5</span>
-        <span class="ou-reason">With both teams possessing potent attacks and a recent history of high-scoring games, the over is the smart play, especially given the Warriors’ home advantage and recent offensive surge.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Roger Tuivasa-Sheck &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Tuivasa-Sheck has a history of success against the Titans, scoring three tries in his last three encounters. His strong running game and ability to find space make him a prime try-scoring threat.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Kurt Capewell &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Capewell's return bolsters the Warriors' attack and his experience on the edge could exploit the Titans' left side defence. He's a consistent performer and a reliable try-scorer.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Hayze Dupont &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Dupont has been a consistent performer for the Titans and is a value play at a good price. He's a strong runner and could capitalise on any defensive lapses from the Warriors.</div>
-        </div></div>
-      <div class="summary">The Warriors' strong form at home and potent attack make them the clear favourites to dominate the Titans.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2669/2026-round-7-new-zealand-warriors-vs-gold-coast-titans" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-5">
-      <div class="card-header">
-        <div class="game-label">GAME 5</div>
-        <div class="matchup">South Sydney Rabbitohs <span class="vs">v</span> St. George Illawarra Dragons</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; Accor Stadium, Sydney</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">South Sydney Rabbitohs</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Rabbitohs 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Dragons 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Rabbitohs: <strong>1500</strong> &nbsp;|&nbsp; Dragons: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Campbell Graham has scored 2 tries in L3 games against the Dragons.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Jaydn Suâa has scored 2 tries in L3 games against the Rabbitohs.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Rabbitohs have dominated recent H2H encounters, winning the last five meetings by significant margins.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Dragons' attack has been woeful, averaging a dismal 4.3 points in the second half this season.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">South Sydney’s attack ranks 8th overall, consistently putting up strong try-scoring numbers.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Rabbitohs have scored first in 60% of their games, but haven’t managed it in their last five.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Campbell Graham has a strong record against the Dragons, with two tries in their last three clashes.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Dragons’ edge defence has been a consistent weakness, making them vulnerable to South Sydney’s quick play-the-balls.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The ELO model gives South Sydney a 57% win probability, reflecting their superior form.</div>
-        </div></div>
-      
-      <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; South Sydney Rabbitohs: David Fifita — OUT</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Jye Gray — OUT</div><div class="injury-item">&#9888; St. George Illawarra Dragons: Moses Suli — OUT</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Bronson Garlick — IN</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Matthew Dufty — IN</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Moala Graham-Taufa — IN</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Salesi Ataata — IN</div><div class="injury-item">&#9888; South Sydney Rabbitohs: Thomas Fletcher — IN</div><div class="injury-item">&#9888; St. George Illawarra Dragons: David Fale — IN</div><div class="injury-item">&#9888; St. George Illawarra Dragons: Jacob Halangahu — IN</div><div class="injury-item">&#9888; St. George Illawarra Dragons: Loko Jnr Pasifiki Tonga — IN</div><div class="injury-item">&#9888; St. George Illawarra Dragons: Lyhkan King-Togia — IN</div></div>
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Rabbitohs</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;6</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">LC</span>
-            <span class="pos-label">Left Centre</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;3</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Dragons</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;3</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">L2R</span>
-            <span class="pos-label">Left 2nd Row</span>
-            <span class="pos-scored">&#9650;2</span>
-            <span class="pos-conceded">&#9660;3</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RC</span>
-            <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;2</span>
-            <span class="pos-conceded">&#9660;1</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#639922;">OVER +51.5</span>
-        <span class="ou-reason">Given South Sydney's potent attack and the Dragons' defensive vulnerabilities, the total points scored are likely to exceed this line.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Campbell Graham &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Graham has a history of scoring against the Dragons and is a consistent try-scorer for the Rabbitohs, making him a prime candidate to cross.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Lachlan Ilias &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">With the Dragons' porous defence, Ilias has a good opportunity to exploit gaps and potentially sneak in for a try.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Braidon Burns &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Burns has been showing promise and could capitalise on the Dragons' defensive frailties, offering good value.</div>
-        </div></div>
-      <div class="summary">Expect a dominant performance from the Rabbitohs as they dismantle the struggling Dragons.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2670/2026-round-7-south-sydney-rabbitohs-vs-st-george-illawarra-dragons" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-6">
-      <div class="card-header">
-        <div class="game-label">GAME 6</div>
-        <div class="matchup">Wests Tigers <span class="vs">v</span> Brisbane Broncos</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; Campbelltown Sports Stadium, Sydney</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Wests Tigers</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Tigers 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Broncos 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Tigers: <strong>1500</strong> &nbsp;|&nbsp; Broncos: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Sunia Turuva has scored 2 tries in L2 games against the Broncos.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Jordan Riki has scored 4 tries in L4 games against the Tigers.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Wests Tigers are currently sitting 2nd on the ladder with a strong attacking game, boasting 5.4 tries per game.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Brisbane's first-half performances have been consistently weak, averaging just 9.3 points.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Tigers have a slight edge in the ELO model, predicting a 57% chance of victory.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Sunia Turuva has a history of success against the Broncos, scoring two tries in their last two encounters.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Neither team has managed to score first this season, suggesting a slow start is likely.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The potential inclusion of Jarome Luai significantly boosts the Tigers' attack and playmaking capabilities.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Tigers' right-side attack ranks 3rd, indicating a potential avenue for points against the Broncos' defence.</div>
-        </div></div>
-      
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Tigers</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;6</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">R2R</span>
-            <span class="pos-label">Right 2nd Row</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Broncos</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RC</span>
-            <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;6</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">PR</span>
-            <span class="pos-label">Prop</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#E24B4A;">UNDER +49.5</span>
-        <span class="ou-reason">Given both teams' struggles to score first and the Broncos' weak first-half performances, the total points are likely to stay under the line.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Sunia Turuva &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Turuva has a proven track record against the Broncos, scoring in two of their last two meetings, and the Tigers right-side attack is potent.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">Jarome Luai &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Luai's inclusion provides a significant boost to the Tigers' attack, and he's a proven playmaker capable of finding space and scoring.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Reece Walsh &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Walsh is a dynamic player and although the Tigers defence is solid, his speed and unpredictability could create opportunities.</div>
-        </div></div>
-      <div class="summary">Campbelltown will be rocking as the Tigers look to break their Broncos hoodoo and continue their climb up the ladder.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2671/2026-round-7-wests-tigers-vs-brisbane-broncos" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-7">
-      <div class="card-header">
-        <div class="game-label">GAME 7</div>
-        <div class="matchup">Sydney Roosters <span class="vs">v</span> Newcastle Knights</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; Allianz Stadium, Sydney</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Sydney Roosters</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Roosters 57%</span>
+        <span>Dragons 57%</span>
         <span class="prob-title">Win Probability (ELO)</span>
         <span>Knights 43%</span>
       </div>
@@ -940,280 +98,145 @@
         <div class="prob-away" style="width:42.9%"></div>
       </div>
     </div>
-      <div class="elo-nums">ELO &mdash; Roosters: <strong>1500</strong> &nbsp;|&nbsp; Knights: <strong>1500</strong></div>
+      <div class="elo-nums">ELO &mdash; Dragons: <strong>1500</strong> &nbsp;|&nbsp; Knights: <strong>1500</strong></div>
       <div class="section-label">QUICK HITS</div>
       <div class="quick-hits">
         <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Have lost their L3 first halves.</div>
+          <div class="dot" style="background:#E24B4A"></div>
+          <div class="qh-text">The Dragons have failed to score first in all eight games this season, suggesting a slow start is likely.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Dominic Young has scored 3 tries in 3 games against the Roosters.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Have lost the last 3 games to Roosters by an average of 2.6 points.</div>
+          <div class="qh-text">Newcastle's attacking prowess, averaging 4.6 tries per game, significantly outpaces the Dragons' 2.4.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Roosters have lost their last three first halves, indicating a slow start that needs addressing.</div>
+          <div class="qh-text">The Dragons' first-half average of just 9.5 points highlights their struggles to build momentum early.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Despite recent losses, the Roosters hold a 4-1 H2H advantage over the Knights, showcasing a historical dominance.</div>
+          <div class="qh-text">Newcastle's right wing has scored nine tries this season, demonstrating a clear attacking threat.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">Newcastle's scoring averages are slightly higher (4.7 tries/game vs 4.0), but their defensive record is weaker (4.17 conceded).</div>
+          <div class="qh-text">The ELO model slightly favours the Dragons (57%), but the Knights' form is compelling.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Knights have lost their last three games to the Roosters by an average of 2.6 points, highlighting a recurring struggle.</div>
+          <div class="qh-text">The Dragons are missing key players like Leilua and Suli, which will impact their defensive capabilities.</div>
         </div>
         <div class="qh-row">
           <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Roosters’ right side attack ranks 8th, suggesting a potential avenue for points against Newcastle’s weaker left side defence.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The ELO model gives the Roosters a 57% win probability, indicating a slight edge despite a close matchup.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Dominic Young has scored three tries in three games against the Roosters, but the Roosters defence has improved.</div>
+          <div class="qh-text">Newcastle's prop forward has scored seven tries, showcasing their forward pack's effectiveness.</div>
         </div></div>
       
       <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; Sydney Roosters: No changes to team from previous round — OUT</div><div class="injury-item">&#9888; Newcastle Knights: Dylan Lucas — OUT</div><div class="injury-item">&#9888; Newcastle Knights: Tyson Frizell — OUT</div><div class="injury-item">&#9888; Newcastle Knights: Wilson De Courcey — OUT</div><div class="injury-item">&#9888; Sydney Roosters: Benaiah Ioelu — IN</div><div class="injury-item">&#9888; Sydney Roosters: Billy Smith — IN</div><div class="injury-item">&#9888; Sydney Roosters: Egan Butcher — IN</div><div class="injury-item">&#9888; Newcastle Knights: Dylan Brown — IN</div><div class="injury-item">&#9888; Newcastle Knights: Elijah Salesa-Leaumoana — IN</div><div class="injury-item">&#9888; Newcastle Knights: Francis Manuleleua — IN</div><div class="injury-item">&#9888; Newcastle Knights: James Schiller — IN</div><div class="injury-item">&#9888; Newcastle Knights: Kyle McCarthy — IN</div><div class="injury-item">&#9888; Newcastle Knights: Peter Hola — IN</div></div>
+      <div class="injury-section"><div class="injury-item">&#9888; Home: Daniel Atkinson — OUT</div><div class="injury-item">&#9888; Home: Hayden Buchanan — OUT</div><div class="injury-item">&#9888; Home: Luciano Leilua — OUT</div><div class="injury-item">&#9888; Home: Moses Suli — OUT</div><div class="injury-item">&#9888; Away: No changes to team from previous round — OUT</div><div class="injury-item">&#9888; Home: Christian Tuipulotu — IN</div><div class="injury-item">&#9888; Home: Clinton Gutherson — IN</div><div class="injury-item">&#9888; Home: Dylan Egan — IN</div><div class="injury-item">&#9888; Home: Lyhkan King-Togia — IN</div><div class="injury-item">&#9888; Away: No changes to team from previous round — IN</div></div>
       
-      <div class="section-label">TOP SCORING POSITIONS</div>
+      <div class="section-label">SCORING POSITIONS vs DEFENCE</div>
       <div class="positions-grid">
         <div class="pos-block">
-          <div class="pos-team-name">Roosters</div>
+          <div class="pos-team-name">Dragons Attack</div>
           
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;3</span>
+          <div class="pos-row pos-header">
+            <span class="pos-code"></span>
+            <span class="pos-label"></span>
+            <span class="pos-scored">Scored</span>
+            <span class="pos-conceded">Knights conc.</span>
           </div>
           <div class="pos-row">
-            <span class="pos-code">FE</span>
-            <span class="pos-label">Front Edge</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;4</span>
+            <span class="pos-code">RW</span>
+            <span class="pos-label">Right Wing</span>
+            <span class="pos-scored">&#9650; 4</span>
+            <span class="pos-conceded">&#9660; 7</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">RC</span>
             <span class="pos-label">Right Centre</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-        </div>
-        <div class="pos-block">
-          <div class="pos-team-name">Knights</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;9</span>
-            <span class="pos-conceded">&#9660;2</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;5</span>
-            <span class="pos-conceded">&#9660;6</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">FB</span>
-            <span class="pos-label">Fullback</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-        </div></div>
-      <div class="section-label">O/U PICK</div>
-      
-      <div class="ou-block">
-        <span class="ou-pick" style="color:#E24B4A;">UNDER +50.5</span>
-        <span class="ou-reason">Given the Roosters' struggles to score first and the Knights' defensive capabilities, the total points are likely to stay below the line.</span>
-      </div>
-      <div class="section-label">ATS / VALUE</div>
-      <div class="ats-section">
-        <div class="ats-block" style="border-left: 3px solid #639922;">
-          <div class="ats-header">
-            <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">V. Radley &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Radley boasts a 100% strike rate this season, demonstrating a consistent ability to find the line, and the Roosters right side attack is primed to exploit Newcastle’s left side defence.</div>
-        </div>
-        <div class="ats-block" style="">
-          <div class="ats-header">
-            
-            <span class="ats-name">J. Tedesco &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">Tedesco's experience and playmaking ability often lead to opportunities near the try line, and he's a reliable scorer.</div>
-        </div>
-        <div class="ats-block" style="border-left: 3px solid #BA7517;">
-          <div class="ats-header">
-            <span class="badge badge-amber">Value</span>
-            <span class="ats-name">D. Tupou &mdash; Anytime Tryscorer</span>
-            
-          </div>
-          <div class="ats-body">While his strike rate is only 60%, Tupou’s speed and positioning on the wing make him a constant threat, especially with the Roosters right side attack.</div>
-        </div></div>
-      <div class="summary">The Roosters' home ground advantage and historical dominance should be enough to overcome the Knights, despite recent form.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2672/2026-round-7-sydney-roosters-vs-newcastle-knights" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
-    </div>
-    <div class="card" id="game-8">
-      <div class="card-header">
-        <div class="game-label">GAME 8</div>
-        <div class="matchup">Parramatta Eels <span class="vs">v</span> Canterbury-Bankstown Bulldogs</div>
-        <div class="meta">Round 7 &middot; 2026 &middot; CommBank Stadium, Sydney</div>
-      </div>
-      <div class="tip-bar" style="background:#EAF3DE; border-left:4px solid #639922;">
-        <div class="tip-label" style="color:#3B6D11;">TIP</div>
-        <div class="tip-team" style="color:#3B6D11;">Canterbury-Bankstown Bulldogs</div>
-        <div class="tip-conf" style="color:#3B6D11; background:rgba(0,0,0,0.08); border-radius:12px; padding:2px 10px; font-size:12px;">High confidence</div>
-      </div>
-      
-    <div class="prob-bar-section">
-      <div class="prob-label">
-        <span>Eels 57%</span>
-        <span class="prob-title">Win Probability (ELO)</span>
-        <span>Bulldogs 43%</span>
-      </div>
-      <div class="prob-bar">
-        <div class="prob-home" style="width:57.1%"></div>
-        <div class="prob-away" style="width:42.9%"></div>
-      </div>
-    </div>
-      <div class="elo-nums">ELO &mdash; Eels: <strong>1500</strong> &nbsp;|&nbsp; Bulldogs: <strong>1500</strong></div>
-      <div class="section-label">QUICK HITS</div>
-      <div class="quick-hits">
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Josh Addo-Carr has scored 8 tries in L6 games against the Bulldogs.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Marcelo Montoya has scored 5 tries in L5 games against the Eels.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">The Eels have lost four consecutive games, indicating a significant drop in form.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Bulldogs recently defeated the ladder-leading Panthers, showcasing their improved performance.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Parramatta's scoring first percentage is a dismal 33%, highlighting their struggles to gain early momentum.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">Marcelo Montoya has a strong record against the Eels, having scored five tries in their last five encounters.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#BA7517"></div>
-          <div class="qh-text">The Eels' right-side attack ranks 9th, suggesting a potential vulnerability for the Bulldogs to exploit.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#E24B4A"></div>
-          <div class="qh-text">Parramatta's overall attack rank is 11th, demonstrating a lack of consistent offensive firepower.</div>
-        </div>
-        <div class="qh-row">
-          <div class="dot" style="background:#639922"></div>
-          <div class="qh-text">The Bulldogs boast the second-best defence in the competition, limiting opponents' scoring opportunities.</div>
-        </div></div>
-      
-      <div class="section-label">INJURY CONCERNS</div>
-      <div class="injury-section"><div class="injury-item">&#9888; Parramatta Eels: Kelma Tuilagi — OUT</div><div class="injury-item">&#9888; Parramatta Eels: Kitione Kautoga — OUT</div><div class="injury-item">&#9888; Parramatta Eels: Sam Tuivaiti — OUT</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Jethro Rinakama — OUT</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Max King — OUT</div><div class="injury-item">&#9888; Parramatta Eels: Jezaiah Funa-Iuta — IN</div><div class="injury-item">&#9888; Parramatta Eels: Mohamed Alameddine — IN</div><div class="injury-item">&#9888; Parramatta Eels: Saxon Pryke — IN</div><div class="injury-item">&#9888; Parramatta Eels: Sean Russell — IN</div><div class="injury-item">&#9888; Parramatta Eels: Teancum Brown — IN</div><div class="injury-item">&#9888; Parramatta Eels: Toni Mataele — IN</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Alekolasimi Jones — IN</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Jonathan Sua — IN</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Josh Curran — IN</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Leo Thompson — IN</div><div class="injury-item">&#9888; Canterbury-Bankstown Bulldogs: Stephen Crichton — IN</div></div>
-      
-      <div class="section-label">TOP SCORING POSITIONS</div>
-      <div class="positions-grid">
-        <div class="pos-block">
-          <div class="pos-team-name">Eels</div>
-          
-          <div class="pos-row">
-            <span class="pos-code">LW</span>
-            <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;5</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">RW</span>
-            <span class="pos-label">Right Wing</span>
-            <span class="pos-scored">&#9650;4</span>
-            <span class="pos-conceded">&#9660;4</span>
+            <span class="pos-scored">&#9650; 3</span>
+            <span class="pos-conceded">&#9660; 2</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">HK</span>
             <span class="pos-label">Hooker</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;0</span>
+            <span class="pos-scored">&#9650; 3</span>
+            <span class="pos-conceded">&#9660; 2</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">L2R</span>
+            <span class="pos-label">Left 2nd Row</span>
+            <span class="pos-scored">&#9650; 2</span>
+            <span class="pos-conceded">&#9660; 1</span>
           </div>
         </div>
         <div class="pos-block">
-          <div class="pos-team-name">Bulldogs</div>
+          <div class="pos-team-name">Knights Attack</div>
           
+          <div class="pos-row pos-header">
+            <span class="pos-code"></span>
+            <span class="pos-label"></span>
+            <span class="pos-scored">Scored</span>
+            <span class="pos-conceded">Dragons conc.</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">RW</span>
+            <span class="pos-label">Right Wing</span>
+            <span class="pos-scored">&#9650; 9</span>
+            <span class="pos-conceded">&#9660; 4</span>
+          </div>
           <div class="pos-row">
             <span class="pos-code">LW</span>
             <span class="pos-label">Left Wing</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;4</span>
-          </div>
-          <div class="pos-row">
-            <span class="pos-code">R2R</span>
-            <span class="pos-label">Right 2nd Row</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;3</span>
+            <span class="pos-scored">&#9650; 8</span>
+            <span class="pos-conceded">&#9660; 8</span>
           </div>
           <div class="pos-row">
             <span class="pos-code">PR</span>
             <span class="pos-label">Prop</span>
-            <span class="pos-scored">&#9650;3</span>
-            <span class="pos-conceded">&#9660;2</span>
+            <span class="pos-scored">&#9650; 7</span>
+            <span class="pos-conceded">&#9660; 1</span>
+          </div>
+          <div class="pos-row">
+            <span class="pos-code">LC</span>
+            <span class="pos-label">Left Centre</span>
+            <span class="pos-scored">&#9650; 4</span>
+            <span class="pos-conceded">&#9660; 7</span>
           </div>
         </div></div>
       <div class="section-label">O/U PICK</div>
       
       <div class="ou-block">
-        <span class="ou-pick" style="color:#639922;">OVER +58.5</span>
-        <span class="ou-reason">Given the Eels' defensive struggles and the Bulldogs' recent scoring form, exceeding the line of 58.5 points is a likely outcome.</span>
+        <span class="ou-pick" style="color:#E24B4A;">UNDER +51.5</span>
+        <span class="ou-reason">Given the Dragons' scoring struggles and the Knights' defensive capabilities, the total points line is likely to be under.</span>
       </div>
       <div class="section-label">ATS / VALUE</div>
       <div class="ats-section">
         <div class="ats-block" style="border-left: 3px solid #639922;">
           <div class="ats-header">
             <span class="badge badge-green">Best Bet</span>
-            <span class="ats-name">Marcelo Montoya &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Clinton Gutherson &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Montoya's history against the Eels, coupled with Parramatta's defensive frailties, makes him a prime candidate to cross the line. He's scored five tries in the last five games against them, indicating a consistent threat.</div>
+          <div class="ats-body">Gutherson's return to the starting lineup provides a significant boost to the Dragons' attack, and he's shown a knack for scoring in previous seasons, making him a strong Anytime Tryscorer option.</div>
         </div>
         <div class="ats-block" style="">
           <div class="ats-header">
             
-            <span class="ats-name">Teancum Brown &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Brodie Croft &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">With the Eels' defence struggling, Brown could capitalise on opportunities created by the Bulldogs' attack. His speed and agility could prove difficult for the Eels to contain.</div>
+          <div class="ats-body">Croft has been a consistent attacking threat for the Knights, demonstrating good support play and a willingness to take on the line, making him a decent value bet.</div>
         </div>
         <div class="ats-block" style="border-left: 3px solid #BA7517;">
           <div class="ats-header">
             <span class="badge badge-amber">Value</span>
-            <span class="ats-name">Josh Curran &mdash; Anytime Tryscorer</span>
+            <span class="ats-name">Ryan Couchman &mdash; Anytime Tryscorer</span>
             
           </div>
-          <div class="ats-body">Curran's return provides a spark to the Bulldogs' attack and his physicality could create opportunities for himself or his teammates.</div>
+          <div class="ats-body">Couchman's recent form suggests he's finding his groove, and with the Dragons' forwards struggling, he could be a sneaky option to cross the line.</div>
         </div></div>
-      <div class="summary">The Bulldogs' recent form and defensive strength make them the clear favourites in this clash.</div>
-      <a class="tryline-link" href="https://tryline.com.au/match/2673/2026-round-7-parramatta-eels-vs-canterbury-bankstown-bulldogs" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
+      <div class="summary">Newcastle's superior attacking form and the Dragons' key injuries make the Knights the team to back this week.</div>
+      <a class="tryline-link" href="https://tryline.com.au/match/2693/2026-round-10-st-george-illawarra-dragons-vs-newcastle-knights" target="_blank" rel="noopener">Full stats on Tryline &rarr;</a>
     </div></div>
 <div class="footer">Data: tryline.com.au + ELO model &middot; For entertainment purposes only</div>
 </body>

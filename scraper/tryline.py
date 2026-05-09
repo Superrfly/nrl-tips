@@ -82,41 +82,24 @@ def scrape_all_tabs(url: str) -> dict:
                 page.click("text=Tools", timeout=5000)
                 page.wait_for_timeout(2000)
 
-                # Get home team view
-                home_tools = page.inner_text("main") or ""
-                results["tools"] = home_tools
-
-                # Try to click away team button for their attacking positions
+                # Click Select All so all teams appear in the comparison table
                 try:
-                    skip = {
-                        "Preview", "Lineup", "Stats", "Tools",
-                        "2026", "L5", "L10", "H2H", "RD",
-                        "1stH", "2ndH", "Feedback",
-                        "vs Top 4", "vs Top 8", "vs Bottom 9",
-                        "Attacking", "Defending"
-                    }
-                    all_buttons = page.locator("button").all()
-                    team_buttons = []
-                    for btn in all_buttons:
-                        try:
-                            txt = btn.inner_text().strip()
-                            if txt and txt not in skip:
-                                team_buttons.append((txt, btn))
-                        except Exception:
-                            pass
-
-                    # First button = home team, second = away team
-                    if len(team_buttons) >= 2:
-                        team_buttons[1][1].click()
-                        page.wait_for_timeout(1500)
-                        away_tools = page.inner_text("main") or ""
-                        results["tools"] = home_tools + "\n\nAWAY_TEAM_VIEW\n\n" + away_tools
-                        print(f"    Got away team tools view ({len(away_tools)} chars)")
-                    else:
-                        print(f"    WARNING: Could not find away team button (found {len(team_buttons)} team buttons)")
-
+                    page.click("text=Select All", timeout=3000)
+                    page.wait_for_timeout(1000)
+                    print(f"    Selected all teams for position comparison")
                 except Exception as e:
-                    print(f"    WARNING: Away team tab click failed: {e}")
+                    print(f"    WARNING: Could not click Select All: {e}")
+
+                # Click every "Show All" button to expand truncated table rows
+                for _ in range(4):
+                    try:
+                        page.click("text=Show All", timeout=2000)
+                        page.wait_for_timeout(600)
+                    except Exception:
+                        break
+
+                results["tools"] = page.inner_text("main") or ""
+                print(f"    Tools tab scraped ({len(results['tools'])} chars)")
 
             except Exception as e:
                 print(f"    WARNING: Tools tab failed: {e}")
